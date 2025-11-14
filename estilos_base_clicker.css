@@ -1,3 +1,8 @@
+:root {
+    --verde1: rgb(31, 68, 30);
+    --verde2: rgb(59, 131, 58);
+}
+
 * {
     margin: 0;
 }
@@ -21,32 +26,40 @@ p{
 }
 
 body{
-    background-color: rgb(46, 131, 45);
+    background-color: var(--verde2);
 }
 
-header {
-    background-color: rgb(36, 85, 35);
+header{
+    box-sizing: border-box;
+    background-color: var(--verde1);
     width: 100%;
-    height: 5vh;
+    height: 15vh;
     position: fixed; top: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-    z-index: 98;
+    padding: 1rem;
+    z-index: 999;
 }
 
-#inicio_header{
-    display: flex;    flex-direction: row;    align-items: center;
+header h1{
+    color: white;
+    font-family: "Barrio", system-ui;
+    font-size: 28pt;    
 }
+
+header img{
+    width: 84px; height: 84px;
+}
+
+
 #alterna-menu{
     margin-right: 10px;
     background-color: rgba(255, 255, 0, 0);
     border: none;
     color: rgb(36, 85, 35);
     background-image: linear-gradient(rgb(255, 255, 35), rgb(255, 221, 31),rgb(255, 217, 0));
-    padding: 2px 8px; border-radius: 2px;
+    padding: 0.2rem;
     font-family: "Barrio", system-ui;
     font-size: 110%; 
     transition: all 500ms ease-in-out;
@@ -54,23 +67,15 @@ header {
 
 #alterna-menu:hover{
     border: none;
-    background-color: #ffffff;
-    padding: 8px; border-radius: 2px;
-}
-
-header img {
-    width: 10%;
-}
-
-header h1 {
-    color: white;
-    font-family: "Barrio", system-ui; 
+    background-image: linear-gradient(#ffffff);
+    padding: 0.5rem;
 }
 
 main {
-
-    width: 100%;
     margin: 0px;
+    margin-top: 16vh;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
 }
 
 .menu-lateral {
@@ -89,26 +94,23 @@ main {
 }
 
 body.menu-visivel .menu-lateral {
-    top: 85px;
+    top: 16vh;
     opacity: 1;
 }
 
-.conteudo-principal {
-    margin-top: 95px;
-    transition: all 0.5s ease-in-out;
-}
-
 body.menu-visivel .conteudo-principal {
-    margin-top: 280px; 
+    margin-top: calc(16vh + 180px); 
 }
-
 
 .espadinha{
     flex: 1;
     padding: 10px 5px;
     background-image: linear-gradient(rgb(255, 255, 35), rgb(255, 221, 31),rgb(255, 217, 0));
-    border-radius: 8px;
-    display: flex; flex-direction: column; 
+    border: 5px rgb(134, 76, 0) solid;
+    border-top: 5px rgb(219, 124, 0) solid;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.253);
     transition: 100ms all ease-in-out;
     cursor: pointer;
@@ -121,7 +123,9 @@ body.menu-visivel .conteudo-principal {
 }
 
 .espadinha:hover{
-    border: rgb(36, 85, 35) 2px solid;
+    background-image: linear-gradient(white);
+    border: 5px var(--verde1) solid;
+    border-top: 5px var(--verde2) solid;
     padding: 10px 10px;
 }
 .espadinha img{
@@ -143,11 +147,10 @@ body.menu-visivel .conteudo-principal {
 }
 
 .game_em_si{
-    background-image: linear-gradient(to right bottom, rgb(46, 109, 45), rgb(19, 56, 17), rgb(6, 26, 5));
+    background-color: var(--verde1);
     height: 300px;
     margin: 10px 10px 10px 10px;
     padding: 5px;
-    border-radius: 10px;
     display: flex; flex-direction: row; align-items: center; justify-content: center;
 }
 
@@ -195,6 +198,14 @@ body.menu-visivel .conteudo-principal {
     color: white;
     font-family: "Barrio", system-ui; 
     font-size: 14pt;
+}
+
+#zombie-atual{
+    cursor: pointer;
+}
+
+#zombie-atual:hover{
+    filter: brightness(-500%) !important;
 }
 
 #vida_zumbi_atual{
@@ -316,7 +327,6 @@ body.menu-visivel .conteudo-principal {
     color: rgb(36, 85, 35);
     margin-left: 10px;
     padding: 3px 8px;
-    border-radius: 8px;
 }
 
 #Balao-magico{

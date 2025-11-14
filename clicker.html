@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     <title>Zoombie Clicker</title>
+    <link rel="stylesheet" href="CSS/popUP.css">
     <link rel="stylesheet" href="estilos_base_clicker.css">
     <link rel="stylesheet" href="estilo-colecionaveis.css">
     <link rel="stylesheet" media="(max-width: 600px)" href="estilos_clicker_short.css">
@@ -23,93 +24,14 @@
 </head>
 <body>
     <header>
-
-        <div id="inicio_header"> 
-            <img src="images/zombie-mine.gif" alt="Coin Icon">
-            <h1>Zoombie Clicker</h1>
-        </div>
-        
+        <img src="images/zombie-mine.gif" alt="Coin Icon">
+        <h1>Zoombie Clicker</h1>      
         <button id="alterna-menu">Loja</button>
     </header>
-    <div id="mensagem-de-tela">
-        <h1 id="Titulo-mensagem-tela">Você perdeu!</h1> 
-        <img src="https://pa1.aminoapps.com/6603/771c6920522bed9255acf2c486e360e6b51a15cc_00.gif">
-        <p id="texto-mensagem-tela">Textinho</p>
-        <button id="fechar-mensagem">Fechar</button>
-    </div>
 
     <main class="conteudo-principal">
         <div id="Balao-magico">+100</div>
-
-            <section id="store" class="c_store">
-            <div class="menu-lateral">
-                    </article>
-                    <article class="espadinha" data-espadinha="espadaDePiedra">
-                        <img src="images/Espada_de_piedra.webp">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>Grátis</p>
-                        </div>
-                    </article>
-                    <article class="espadinha" data-espadinha="espadaDeOuro">
-                        <img src="images/Espada_de_oro.webp">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>100</p>
-                        </div>
-                    </article>
-                    <article class="espadinha" data-espadinha="espadaDeDiamante">
-                        <img src="images/Diamond_Sword.webp">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>300</p>
-                        </div>
-                    </article>
-                    <article class="espadinha" data-espadinha="espadaDeDiamante">
-                        <img src="images/espadaroxinha.gif">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>500</p>
-                        </div>
-                    </article>
-                    <article class="espadinha" data-espadinha="espadaDeNetherite">
-                        <img src="images/Netherite_Sword.webp">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>800</p>
-                        </div>
-                    </article>
-                    <article class="espadinha" >
-                        <img src="images/espada suprema.gif">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>1000</p>
-                        </div>
-                    </article>
-                    <article class="espadinha" data-espadinha="espadaSuprema">
-                        <img src="images/deusessword.gif">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>2500</p>
-                        </div>
-                    </article>
-                    <article class="espadinha especial" data-espadinha="espadaSuprema">
-                        <img src="images/machadin.gif">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>5000</p><br>
-                        </div>
-                    </article>
-                    <article class="espadinha especial" data-espadinha="espadaSuprema">
-                        <img src="images/luminite-sword.gif">
-                        <div class="preco_espadinha">
-                            <img src="images/click.webp">
-                            <p>8555</p><br>
-                        </div>
-                    </article>
-                    
-            </div>        
-        </section>
+        <section id="store" class="c_store"></section>
                 
         <div id="timer"></div>
         <p id="meta"></p>
@@ -141,7 +63,6 @@
             <audio id="audioPlayer" autoplay></audio> <!-- Player de áudio sem controles padrão -->
             <button id="playPauseButton">▶️</button> <!-- Botão Play/Pause -->
         </section>
-        <a href="index-clicker.html" id="play">Ajuda</a>
 
         <h1 id="utensilios">Utensilios:</h1>
         <p id="txto-item-atual">Nenhum item Ativo</p>
@@ -187,10 +108,17 @@
         <p id="version">Versão 2.0.0 - Os Zumbis estão a solta!</p>        
     </main>
 
-    <script src="código/game.js"></script>
-    <script src="código/timer.js"></script>
-    <script src="código/lojinha.js"></script>
-    <script src="código/sounds.js"></script>
-    <script src="código/efeitos-ponteiro.js"></script>
+    <div id="popUP" class="popUP"></div>
+
+    <script src="JS/popUP.js"></script>
+
+    <script src="JS/constArmas.js"></script>
+    <script src="JS/sectionStore.js"></script>
+
+    <script src="JS/game.js"></script>
+    <script src="JS/timer.js"></script>
+    <script src="JS/lojinha.js"></script>
+    <script src="JS/sounds.js"></script>
+    <script src="JS/efeitos-ponteiro.js"></script>
 </body>
 </html>
